@@ -1,6 +1,5 @@
 package collection.set;
 
-import java.sql.SQLOutput;
 import java.util.*;
 
 public class MyHashSetV0Main {
