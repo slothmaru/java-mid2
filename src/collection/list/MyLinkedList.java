@@ -1,10 +1,11 @@
-package collection.link;
+package collection.list;
 
-public class MyLinkedListV3<E> {
+public class MyLinkedList<E> implements MyList<E> {
 
   private Node<E> first;
   private int size = 0;
 
+  @Override
   public void add(E e) {
     Node<E> nowNode = new Node<>(e);
     if (first == null) {
@@ -16,6 +17,7 @@ public class MyLinkedListV3<E> {
     size++;
   }
 
+  @Override
   public void add(int idx, E e) {
     Node<E> newNode = new Node<>(e);
     if (idx == 0) {
@@ -37,6 +39,7 @@ public class MyLinkedListV3<E> {
     return x;
   }
 
+  @Override
   public E set(int index, E e) {
     Node<E> x = getNode(index);
     E oldValue = x.item;
@@ -44,7 +47,7 @@ public class MyLinkedListV3<E> {
     return oldValue;
   }
 
-  //추가 코드
+  @Override
   public E remove(int idx) {
     Node<E> removeNode = getNode(idx);
     E removedItem = removeNode.item;
@@ -60,6 +63,7 @@ public class MyLinkedListV3<E> {
     return removedItem;
   }
 
+  @Override
   public E get(int index) {
     Node<E> node = getNode(index);
     return node.item;
@@ -73,6 +77,7 @@ public class MyLinkedListV3<E> {
     return x;
   }
 
+  @Override
   public int indexOf(E o) {
     int index = 0;
     for (Node<E> x = first; x != null; x = x.next) {
